@@ -1,0 +1,42 @@
+Performance Testing
+  GOAL: Rebuilding backend to optimize high level of web traffic
+
+  > Preform stress Testing
+    > Push application beyond limits of normal operation
+    > Overwhelm your system with heavy load to determine limits
+    > Identify weak points to improve robustness, availability and
+      error handling
+
+  > What should you stress test?
+    > Behaviors that represent your whole application
+    > Your API
+      > What endpoints?
+      > Where in data are you testing?
+    > Ensure variety in items selected for testing
+    > Favor items from the end of your dataset
+
+  > Where should you stress test?
+    > Locally, in development
+      > Httperf, Jmeter or Artillery
+    > Deployed, in the cloud
+      > When testing deployed, use a cloud service, not your computer
+      > Cloud tools: Loader.io, Flood.io
+
+  > Metrics to collect
+    > Response time: how fast does your API respond?
+      > Goal: <2000 ms under load
+    > Throughput: how many requests can you process per second?
+      > Goal: 100 RPS on EC2
+    > Error rate: how often does a response generate an error?
+      > Goal: <1% under load
+
+  > Metrics collection and visualization
+    > Logging
+      > console might not be the best place to log
+    > Counter and timer Metrics
+      > Tools: New Relic*, statsD + Grafana, ELK stack
+        > 14 day trial (only use in second half)
+
+  
+
+

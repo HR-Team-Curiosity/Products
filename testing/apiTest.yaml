@@ -1,0 +1,13 @@
+config:
+  target: http://localhost:8080
+  phases:
+    - duration: 600
+      arrivalRate: 300
+  ensure:
+    maxErrorRate: 1
+  processor: "./randomUserQuery.js"
+scenarios:
+  - flow:
+    - function: "randomID"
+    - get:
+        url: "/products/{{ query }}"
